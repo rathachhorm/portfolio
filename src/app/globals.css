@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f7ff;
+  --foreground: #121528;
+  --accent: #ff5fb0;
+  --accent-2: #6a7cff;
+  --muted: #55607a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 95, 176, 0.15), transparent 32%),
+    radial-gradient(circle at 80% 10%, rgba(106, 124, 255, 0.22), transparent 38%),
+    radial-gradient(circle at 60% 70%, rgba(0, 216, 255, 0.14), transparent 36%),
+    #f6f7ff;
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: #f5e7ff;
+  color: #1f2933;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.grid-overlay {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: radial-gradient(circle at center, black, transparent 70%);
+  opacity: 0.25;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+.animate-fade-up-delayed {
+  animation: fade-up 0.9s ease-out 0.15s both;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-slide-loop {
+  animation: slide-loop 6s ease-in-out infinite;
+}
+
+@keyframes slide-loop {
+  0% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(-3px);
+  }
+}
+
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: -50% -60%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.65),
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.sheen:hover::after,
+.sheen:focus-visible::after {
+  transform: translateX(120%);
+}
+
+.btn-glow {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 12px 30px rgba(255, 95, 176, 0.25), 0 6px 15px rgba(106, 124, 255, 0.2);
+}
+
+.btn-glow:hover,
+.btn-glow:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(255, 95, 176, 0.35), 0 10px 25px rgba(106, 124, 255, 0.25);
+}
+
+.nav-divider {
+  position: relative;
+  height: 2px;
+  overflow: hidden;
+  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+}
+
+.nav-divider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, #8c7bff, #00d8ff);
+  animation: slide-accent 2.4s ease-in-out infinite;
+}
+
+@keyframes slide-accent {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(250%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(320%);
+    opacity: 0;
+  }
+}
+
+.tech-bg {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(0, 216, 255, 0.12), transparent 28%),
+    radial-gradient(circle at 80% 15%, rgba(106, 124, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 70% 75%, rgba(255, 95, 176, 0.12), transparent 26%),
+    #f6f7ff;
+}
+
+.tech-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(rgba(0, 140, 255, 0.18) 1px, transparent 1px),
+    radial-gradient(rgba(0, 216, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.6) 0 10%, transparent 10% 20%, rgba(255, 255, 255, 0.4) 20% 30%, transparent 30% 40%, rgba(255, 255, 255, 0.25) 40% 50%, transparent 50% 60%, rgba(255, 255, 255, 0.15) 60% 70%, transparent 70% 80%, rgba(255, 255, 255, 0.08) 80% 90%, transparent 90% 100%),
+    linear-gradient(90deg, rgba(0, 216, 255, 0.12) 1px, transparent 1px);
+  background-size:
+    28px 28px,
+    36px 36px,
+    420px 420px,
+    140px 140px;
+  opacity: 0.9;
+}

@@ -89,8 +89,8 @@ export default function Header() {
       {open ? (
         <div className="md:hidden">
           <div className="fixed inset-0 z-40 bg-slate-900/20 backdrop-blur-sm transition-opacity" onClick={() => setOpen(false)} />
-          <div className="fixed left-0 right-0 top-16 z-50 mx-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl">
-            <div className="flex items-center justify-between pb-3">
+          <div className="fixed left-0 right-0 top-16 z-50 mx-4 max-h-[75vh] overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl sm:mx-auto sm:max-w-lg">
+            <div className="flex items-center justify-between gap-3 pb-3">
               <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <Image
                   src={`${basePath}/assets/logo.ico`}
@@ -112,18 +112,18 @@ export default function Header() {
                 </span>
               </button>
             </div>
-            <div className="flex flex-col gap-3 text-sm font-medium text-slate-700">
+            <div className="flex flex-col gap-2 text-sm font-medium text-slate-700">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="rounded-lg px-3 py-2 transition hover:bg-slate-50"
+                  className="block w-full rounded-lg px-3 py-2 text-left transition hover:bg-slate-50"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex items-center gap-3 pt-2 text-slate-500">
+              <div className="flex items-center gap-3 border-t border-slate-100 pt-3 text-slate-500">
                 {socials.map((social) => (
                   <a
                     key={social.label}

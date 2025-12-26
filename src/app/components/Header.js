@@ -89,7 +89,7 @@ export default function Header() {
       {open ? (
         <div className="md:hidden">
           <div className="fixed inset-0 z-40 bg-slate-900/20 backdrop-blur-sm transition-opacity" onClick={() => setOpen(false)} />
-          <div className="fixed left-0 right-0 top-16 z-50 mx-4 max-h-[75vh] overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4 shadow-2xl sm:mx-auto sm:max-w-lg">
+          <div className="fixed inset-0 z-50 overflow-y-auto bg-white p-5 sm:inset-x-0 sm:bottom-auto sm:top-16 sm:mx-auto sm:max-h-[75vh] sm:w-full sm:max-w-lg sm:rounded-2xl sm:border sm:border-slate-200 sm:shadow-2xl">
             <div className="flex items-center justify-between gap-3 pb-3">
               <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <Image

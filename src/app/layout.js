@@ -12,17 +12,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const asset = (path) => `${basePath}${path}`;
+
 export const metadata = {
   title: "Chhorm Ratha",
   description:
     "Portfolio site built with Next.js and Tailwind, pairing bold visuals with a clear, modular layout.",
   icons: {
     icon: [
-      { url: "/assets/favicon.ico", rel: "icon", sizes: "any", type: "image/x-icon" },
-      { url: "/assets/logo.ico", rel: "icon", sizes: "any", type: "image/x-icon" },
+      { url: asset("/assets/favicon.ico"), rel: "icon", sizes: "any", type: "image/x-icon" },
+      { url: asset("/assets/logo.ico"), rel: "icon", sizes: "any", type: "image/x-icon" },
     ],
-    shortcut: "/assets/favicon.ico",
-    apple: "/assets/logo.ico",
+    shortcut: asset("/assets/favicon.ico"),
+    apple: asset("/assets/logo.ico"),
   },
 };
 

@@ -18,6 +18,8 @@ import {
 } from "./data/portfolio";
 
 export default function Home() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
     <div className="relative bg-[#f7f9fb] text-slate-800 tech-bg" suppressHydrationWarning>
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 pb-16 pt-8 sm:px-8">
@@ -37,7 +39,7 @@ export default function Home() {
                 </div>
                 <div className="relative h-40 w-40 overflow-hidden rounded-full border-4 border-white sm:h-44 sm:w-44">
                   <Image
-                    src={profile.image}
+                    src={`${basePath}${profile.image}`}
                     alt="Profile"
                     fill
                     sizes="(max-width: 640px) 160px, 176px"

@@ -5,6 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { navLinks, socials } from "../data/portfolio";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 export default function Header() {
   const [open, setOpen] = useState(false);
 
@@ -20,7 +22,7 @@ export default function Header() {
             suppressHydrationWarning
           >
             <Image
-              src="/assets/logo.png"
+              src={`${basePath}/assets/logo.ico`}
               alt="Logo"
               fill
               sizes="48px"
@@ -91,7 +93,7 @@ export default function Header() {
             <div className="flex items-center justify-between pb-3">
               <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <Image
-                  src="/assets/logo.png"
+                  src={`${basePath}/assets/logo.ico`}
                   alt="Logo"
                   fill
                   sizes="36px"

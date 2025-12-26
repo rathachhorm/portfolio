@@ -36,14 +36,12 @@ jobs:
 
       - name: Build static site
         run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: "/portfolio"
-          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
+          name: ${{ env.PAGES_ARTIFACT_NAME }}
 
   deploy:
     needs: build
@@ -55,3 +53,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
+env:
+  NEXT_PUBLIC_BASE_PATH: /portfolio
+  NEXT_TELEMETRY_DISABLED: 1
+  PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}

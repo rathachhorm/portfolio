@@ -85,13 +85,13 @@ export default function Home() {
               >
                 <Link
                   href="/projects"
-                  className="btn-glow sheen rounded-full bg-gradient-to-r from-[#8c7bff] via-[#9a4dff] to-[#00d8ff] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#8c7bff]/40 transition hover:-translate-y-0.5 hover:shadow-[#9a4dff]/60"
+                  className="btn-glow sheen inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#8c7bff] via-[#9a4dff] to-[#00d8ff] px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-[#8c7bff]/40 transition hover:-translate-y-0.5 hover:shadow-[#9a4dff]/60 sm:w-auto"
                 >
                   {hero.ctaPrimary}
                 </Link>
                 <Link
                   href="/contact"
-                  className="btn-glow rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-[#7f5af0] hover:text-[#7f5af0]"
+                  className="btn-glow inline-flex w-full items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 transition hover:border-[#7f5af0] hover:text-[#7f5af0] sm:w-auto"
                 >
                   {hero.ctaSecondary}
                 </Link>

@@ -6,6 +6,11 @@ on:
       - main
   workflow_dispatch:
 
+env:
+  NEXT_PUBLIC_BASE_PATH: /portfolio
+  NEXT_TELEMETRY_DISABLED: 1
+  PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}
+
 permissions:
   contents: read
   pages: write
@@ -55,7 +60,3 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
-env:
-  NEXT_PUBLIC_BASE_PATH: /portfolio
-  NEXT_TELEMETRY_DISABLED: 1
-  PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}

@@ -21,7 +21,7 @@ When testing the production build locally with the same base path GitHub Pages w
 NEXT_PUBLIC_BASE_PATH=/portfolio npm run build
 ```
 
-## Deployment (GitHub Actions + Pages)
+## Deployment (GitHub Actions + Pages, not Vercel)
 
 Deployment is automated via `.github/workflows/deploy.yml`.
 

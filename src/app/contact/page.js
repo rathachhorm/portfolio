@@ -26,14 +26,18 @@ export default function ContactPage() {
                 href={`mailto:${contact.email}`}
                 className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-sm transition hover:-translate-y-0.5 hover:border-[#7f5af0] hover:text-[#7f5af0]"
               >
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-[#f4f2ff] text-[#7f5af0]">✉️</span>
+                <span className="grid h-8 w-8 place-items-center rounded-full bg-[#f4f2ff] text-[#7f5af0]">
+                  ✉️
+                </span>
                 <span>Email me</span>
               </a>
               <a
                 href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`}
                 className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#8c7bff] via-[#6a7cff] to-[#00d8ff] px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:shadow-xl"
               >
-                <span className="grid h-8 w-8 place-items-center rounded-full bg-white/15 text-white">📞</span>
+                <span className="grid h-8 w-8 place-items-center rounded-full bg-white/15 text-white">
+                  📞
+                </span>
                 <span className="whitespace-nowrap">Call {contact.phone}</span>
               </a>
             </div>

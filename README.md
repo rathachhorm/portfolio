@@ -1,38 +1,37 @@
-# portfolio
+# Portfolio
 
-Website: https://rathachhorm.github.io/portfolio/
+Live site: https://rathachhorm.github.io/portfolio/
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org) project configured for static export and deployment to GitHub Pages.
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site. Edit `src/app/page.js` (and other files under `src/`) to update content; hot reload is enabled.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+When testing the production build locally with the same base path GitHub Pages will use, run:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+NEXT_PUBLIC_BASE_PATH=/portfolio npm run build
+```
 
-## Learn More
+## Deployment (GitHub Actions + Pages)
 
-To learn more about Next.js, take a look at the following resources:
+Deployment is automated via `.github/workflows/deploy.yml`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Triggers on pushes to `main` or manual dispatch from the Actions tab.
+- Builds with Node 20, runs `npm ci` and `npm run build`, and uploads the exported `out` directory.
+- Sets `NEXT_PUBLIC_BASE_PATH` automatically. If the repo is `<username>.github.io` the base path is `/`; otherwise it is `/<repo-name>`.
+- Publishes the artifact with `actions/deploy-pages` to GitHub Pages.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Initial setup:
 
-## Deploy on Github Action
-
-The easiest way to deploy your Next.js app is to use the Github Action from the creators of Next.js.
+1. In **Settings → Pages**, set **Source** to **GitHub Actions**.
+2. Ensure Pages permissions allow deployment from workflows (default for public repos).
+3. Push to `main` or use **Actions → Deploy to GitHub Pages → Run workflow** to trigger the first deploy.

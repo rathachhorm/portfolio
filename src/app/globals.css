@@ -176,3 +176,109 @@ body {
 .tech-bg::before {
   content: none;
 }
+
+/* Contact aurora animation */
+.contact-aurora {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 95, 176, 0.08), transparent 32%),
+    radial-gradient(circle at 80% 30%, rgba(0, 216, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(138, 92, 255, 0.06), transparent 26%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 30px 60px rgba(88, 111, 137, 0.12);
+}
+
+.contact-aurora::before,
+.contact-aurora::after {
+  content: "";
+  position: absolute;
+  inset: -30% -10%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 95, 176, 0.25), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(0, 216, 255, 0.25), transparent 38%);
+  filter: blur(48px);
+  opacity: 0.8;
+  animation: aurora-shift 12s ease-in-out infinite alternate;
+}
+
+.contact-aurora::after {
+  inset: -40% -20%;
+  animation-duration: 16s;
+  animation-delay: 1.4s;
+}
+
+@keyframes aurora-shift {
+  0% {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 2%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(7%, 6%, 0) scale(1.08);
+  }
+}
+
+.contact-pill {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-size: 200% 200%;
+  transition: transform 180ms ease, box-shadow 220ms ease, background-position 600ms ease;
+}
+
+.contact-pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.contact-pill:hover,
+.contact-pill:focus-visible {
+  transform: translateY(-2px);
+  background-position: 80% 20%;
+  box-shadow: 0 20px 45px rgba(106, 124, 255, 0.25), 0 10px 25px rgba(0, 216, 255, 0.2);
+}
+
+.contact-pill:hover::after,
+.contact-pill:focus-visible::after {
+  opacity: 1;
+}
+
+.contact-bubble {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 95, 176, 0.18), transparent 60%);
+  filter: blur(12px);
+  animation: float 12s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.contact-bubble:nth-child(1) {
+  top: -20px;
+  right: 18%;
+  animation-delay: 0.5s;
+}
+
+.contact-bubble:nth-child(2) {
+  bottom: -30px;
+  left: 14%;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 216, 255, 0.15), transparent 60%);
+  animation-duration: 10s;
+  animation-delay: 1.6s;
+}
+
+.contact-bubble:nth-child(3) {
+  top: 18%;
+  left: 36%;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 30% 30%, rgba(138, 92, 255, 0.16), transparent 58%);
+  animation-duration: 14s;
+  animation-delay: 0.8s;
+}

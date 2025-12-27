@@ -92,8 +92,8 @@ export default function Header() {
             className="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm transition-opacity"
             onClick={() => setOpen(false)}
           />
-          <div className="fixed inset-0 z-50 overflow-y-auto bg-white/98 text-slate-900">
-            <div className="flex items-center justify-between gap-3 border-b border-slate-200 px-4 py-4">
+          <div className="fixed inset-0 z-[60] flex flex-col bg-white text-slate-900">
+            <div className="flex items-center justify-between gap-3 border-b border-slate-200 px-5 py-4">
               <div className="relative h-10 w-10 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <Image
                   src={`${basePath}/assets/logo.ico`}
@@ -115,40 +115,42 @@ export default function Header() {
                 </span>
               </button>
             </div>
-            <div className="flex flex-col divide-y divide-slate-100">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block px-4 py-4 text-base font-semibold transition hover:bg-slate-50"
-                  onClick={() => setOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="flex items-center gap-3 px-4 py-4">
-                {socials.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-slate-200 bg-white text-xs font-semibold uppercase tracking-wide transition hover:border-[#7f5af0] hover:text-[#7f5af0]"
+            <div className="flex-1 overflow-y-auto">
+              <div className="flex flex-col divide-y divide-slate-100">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block px-5 py-4 text-base font-semibold transition hover:bg-slate-50"
+                    onClick={() => setOpen(false)}
                   >
-                    {social.icon ? (
-                      <Image
-                        src={social.icon}
-                        alt={social.label}
-                        width={26}
-                        height={26}
-                        className="object-contain p-1"
-                      />
-                    ) : (
-                      <span className="grid h-full w-full place-items-center">
-                        {social.label[0]}
-                      </span>
-                    )}
-                  </a>
+                    {link.label}
+                  </Link>
                 ))}
               </div>
+            </div>
+            <div className="flex items-center gap-3 border-t border-slate-100 px-5 py-4">
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  className="grid h-11 w-11 place-items-center overflow-hidden rounded-full border border-slate-200 bg-white text-xs font-semibold uppercase tracking-wide transition hover:border-[#7f5af0] hover:text-[#7f5af0]"
+                >
+                  {social.icon ? (
+                    <Image
+                      src={social.icon}
+                      alt={social.label}
+                      width={26}
+                      height={26}
+                      className="object-contain p-1"
+                    />
+                  ) : (
+                    <span className="grid h-full w-full place-items-center">
+                      {social.label[0]}
+                    </span>
+                  )}
+                </a>
+              ))}
             </div>
           </div>
         </div>

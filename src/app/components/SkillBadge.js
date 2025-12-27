@@ -47,7 +47,7 @@ export const skillLogos = {
   docker:
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   nestjs:
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
+    "https://cdn.simpleicons.org/nestjs/E0234E",
   laravel:
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
   "versioncontrol(github)":

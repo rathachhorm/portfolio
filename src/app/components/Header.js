@@ -88,63 +88,68 @@ export default function Header() {
         </button>
       {open ? (
         <div className="md:hidden">
-          <div className="fixed inset-0 z-40 bg-slate-900/20 backdrop-blur-sm transition-opacity" onClick={() => setOpen(false)} />
-          <div className="fixed inset-0 z-50 overflow-y-auto bg-white p-5 sm:inset-x-0 sm:bottom-auto sm:top-16 sm:mx-auto sm:max-h-[75vh] sm:w-full sm:max-w-lg sm:rounded-2xl sm:border sm:border-slate-200 sm:shadow-2xl">
-            <div className="flex items-center justify-between gap-3 pb-3">
-              <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-                <Image
-                  src={`${basePath}/assets/logo.ico`}
-                  alt="Logo"
-                  fill
-                  sizes="36px"
-                  className="object-contain p-1.5"
-                />
-              </div>
-              <button
-                type="button"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-700 shadow-sm transition hover:border-[#7f5af0] hover:text-[#7f5af0]"
-                onClick={() => setOpen(false)}
-                aria-label="Close menu"
-              >
-                <span className="relative block h-4 w-4">
-                  <span className="absolute left-0 top-1/2 h-0.5 w-full -translate-y-1/2 rotate-45 rounded-full bg-current" />
-                  <span className="absolute left-0 top-1/2 h-0.5 w-full -translate-y-1/2 -rotate-45 rounded-full bg-current" />
-                </span>
-              </button>
-            </div>
-            <div className="flex flex-col gap-2 text-sm font-medium text-slate-700">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block w-full rounded-lg px-3 py-2 text-left transition hover:bg-slate-50"
+          <div
+            className="fixed inset-0 z-40 bg-slate-900/30 backdrop-blur-sm transition-opacity"
+            onClick={() => setOpen(false)}
+          />
+          <div className="fixed inset-0 z-50 flex justify-center px-4 py-10">
+            <div className="w-full max-w-lg overflow-hidden rounded-2xl border border-slate-200 bg-white/95 shadow-2xl">
+              <div className="flex items-center justify-between gap-3 border-b border-slate-100 bg-gradient-to-r from-[#f8f4ff] via-white to-[#e6f7ff] px-4 py-3">
+                <div className="relative h-9 w-9 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                  <Image
+                    src={`${basePath}/assets/logo.ico`}
+                    alt="Logo"
+                    fill
+                    sizes="36px"
+                    className="object-contain p-1.5"
+                  />
+                </div>
+                <button
+                  type="button"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-[#7f5af0] hover:text-[#7f5af0]"
                   onClick={() => setOpen(false)}
+                  aria-label="Close menu"
                 >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="flex items-center gap-3 border-t border-slate-100 pt-3 text-slate-500">
-                {socials.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    className="grid h-9 w-9 place-items-center overflow-hidden rounded-full border border-slate-200 bg-white text-xs font-semibold uppercase tracking-wide transition hover:border-[#7f5af0] hover:text-[#7f5af0]"
+                  <span className="relative block h-4 w-4">
+                    <span className="absolute left-0 top-1/2 h-0.5 w-full -translate-y-1/2 rotate-45 rounded-full bg-current" />
+                    <span className="absolute left-0 top-1/2 h-0.5 w-full -translate-y-1/2 -rotate-45 rounded-full bg-current" />
+                  </span>
+                </button>
+              </div>
+              <div className="flex flex-col gap-2 bg-white/95 px-4 py-4 text-sm font-medium text-slate-800">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block w-full rounded-xl border border-transparent px-3 py-3 text-left transition hover:border-[#7f5af0]/40 hover:bg-slate-50"
+                    onClick={() => setOpen(false)}
                   >
-                    {social.icon ? (
-                      <Image
-                        src={social.icon}
-                        alt={social.label}
-                        width={24}
-                        height={24}
-                        className="object-contain p-1"
-                      />
-                    ) : (
-                      <span className="grid h-full w-full place-items-center">
-                        {social.label[0]}
-                      </span>
-                    )}
-                  </a>
+                    {link.label}
+                  </Link>
                 ))}
+                <div className="flex items-center gap-3 border-t border-slate-100 pt-3 text-slate-600">
+                  {socials.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      className="grid h-10 w-10 place-items-center overflow-hidden rounded-full border border-slate-200 bg-white text-xs font-semibold uppercase tracking-wide transition hover:border-[#7f5af0] hover:text-[#7f5af0]"
+                    >
+                      {social.icon ? (
+                        <Image
+                          src={social.icon}
+                          alt={social.label}
+                          width={24}
+                          height={24}
+                          className="object-contain p-1"
+                        />
+                      ) : (
+                        <span className="grid h-full w-full place-items-center">
+                          {social.label[0]}
+                        </span>
+                      )}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

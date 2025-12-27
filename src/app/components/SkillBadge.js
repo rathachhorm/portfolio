@@ -84,7 +84,8 @@ export const skillLogos = {
 export default function SkillBadge({ name }) {
   const initials = name.slice(0, 2).toUpperCase();
   const key = name.toLowerCase().replace(/\s+/g, "");
-  const icon = skillLogos[key];
+  const normalizedKey = name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const icon = skillLogos[key] || skillLogos[normalizedKey];
 
   return (
     <span className="inline-flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2 text-sm font-semibold text-slate-700">

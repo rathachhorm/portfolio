@@ -20,7 +20,8 @@ export default function SkillGrid({
       <div className={`mt-6 grid flex-1 gap-4 ${columns} relative z-10`}>
         {(limit ? items.slice(0, limit) : items).map((skill) => {
           const key = skill.name.toLowerCase().replace(/\s+/g, "");
-          const icon = skillLogos[key];
+          const normalizedKey = skill.name.toLowerCase().replace(/[^a-z0-9]/g, "");
+          const icon = skillLogos[key] || skillLogos[normalizedKey];
           const initials = skill.name.slice(0, 2).toUpperCase();
           return (
             <div

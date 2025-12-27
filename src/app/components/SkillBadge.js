@@ -46,6 +46,16 @@ export const skillLogos = {
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
   "versioncontrol(github)":
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  github:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  gitlab:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg",
+  digitalocean: "https://cdn.simpleicons.org/digitalocean",
+  kubernetes:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+  ansible: "https://cdn.simpleicons.org/ansible",
+  jenkins:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg",
   "ui/uxfigma":
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
   "devops(kubernetes,ansible,jenkins,gitlab,digitalocean)":

@@ -1,4 +1,22 @@
 export const skillLogos = {
+  java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  springboot:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+  mybatisdataaccess: "/assets/skills/mybatis.svg",
+  springrestfulwebservice:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+  springsecurity:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+  jsonwebtoken: "https://cdn.simpleicons.org/jsonwebtokens",
+  thymeleafengine: "https://cdn.simpleicons.org/thymeleaf",
+  python:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+  c: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+  "c++":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+  "c#":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+  php: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
   html5:
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
   css3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
@@ -19,6 +37,25 @@ export const skillLogos = {
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-line.svg",
   "node.js":
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+  datamodeling: "https://cdn.simpleicons.org/neo4j/018bff",
+  postgresql:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  "sql(basicsql)": "https://cdn.simpleicons.org/mysql/4479A1",
+  linux: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
+  docker:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  "versioncontrol(github)":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+  "ui/uxfigma":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+  "devops(kubernetes,ansible,jenkins,gitlab,digitalocean)":
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg",
+  networking: "https://cdn.simpleicons.org/cisco/1BA0D7",
+  googlecloud:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
+  word: "/assets/skills/word.svg",
+  excel: "/assets/skills/excel.svg",
+  powerpoint: "/assets/skills/powerpoint.svg",
   figma:
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
   jest: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",

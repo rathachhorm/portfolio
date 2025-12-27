@@ -22,8 +22,8 @@ export const skillLogos = {
   css3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
   javascript:
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-  react:
-    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  react: "https://cdn.simpleicons.org/react/61DAFB",
+  reactjs: "https://cdn.simpleicons.org/react/61DAFB",
   redux:
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
   "tailwindcss": "https://cdn.simpleicons.org/tailwindcss",

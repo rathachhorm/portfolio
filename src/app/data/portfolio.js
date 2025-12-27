@@ -18,7 +18,7 @@ export const profile = {
 export const hero = {
   greeting: "Hi there,",
   intro: "My name is",
-  headline: "I build full-stack solutions",
+  headline: "Let's build together",
   ctaPrimary: "View projects",
   ctaSecondary: "Contact me",
 };
@@ -160,7 +160,7 @@ export const socials = [
 export const contact = {
   email: "chhormratha007@gmail.com",
   phone: "+855 97 200 7701",
-  headline: "Let’s build together",
+  headline: "Let's build together",
   description:
     "Tell me about the audience, goals, and timeline. I can jump in with discovery, design, and frontend implementation.",
   resume: "#",

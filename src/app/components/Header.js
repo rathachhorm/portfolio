@@ -115,13 +115,14 @@ export default function Header() {
                 </span>
               </button>
             </div>
-            <div className="flex-1 overflow-y-auto">
-              <div className="flex flex-col divide-y divide-slate-100">
+
+            <div className="flex-1 overflow-y-auto px-5 py-4">
+              <div className="flex flex-col gap-2">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block px-5 py-4 text-base font-semibold transition hover:bg-slate-50"
+                    className="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-base font-semibold shadow-sm transition hover:-translate-y-0.5 hover:border-[#7f5af0] hover:text-[#7f5af0]"
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
@@ -129,6 +130,7 @@ export default function Header() {
                 ))}
               </div>
             </div>
+
             <div className="flex items-center gap-3 border-t border-slate-100 px-5 py-4">
               {socials.map((social) => (
                 <a

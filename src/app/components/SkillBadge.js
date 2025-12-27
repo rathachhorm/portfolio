@@ -39,10 +39,17 @@ export const skillLogos = {
   datamodeling: "https://cdn.simpleicons.org/neo4j/018bff",
   postgresql:
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  mongodb:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  sql: "https://cdn.simpleicons.org/mysql/4479A1",
   "sql(basicsql)": "https://cdn.simpleicons.org/mysql/4479A1",
   linux: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg",
   docker:
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+  nestjs:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg",
+  laravel:
+    "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
   "versioncontrol(github)":
     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
   github:

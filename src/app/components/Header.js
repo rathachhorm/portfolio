@@ -92,7 +92,7 @@ export default function Header() {
             className="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm transition-opacity"
             onClick={() => setOpen(false)}
           />
-          <div className="fixed inset-0 z-[60] flex flex-col bg-white text-slate-900">
+          <div className="fixed inset-x-0 bottom-0 z-[60] flex max-h-[80vh] flex-col overflow-hidden rounded-t-3xl border border-slate-200 bg-white text-slate-900 shadow-2xl">
             <div className="flex items-center justify-between gap-3 border-b border-slate-200 px-5 py-4">
               <div className="relative h-10 w-10 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                 <Image

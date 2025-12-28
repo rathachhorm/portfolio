@@ -92,9 +92,9 @@ export default function Header() {
             className="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-sm transition-opacity"
             onClick={() => setOpen(false)}
           />
-          <div className="fixed inset-0 z-[60] flex items-center justify-center px-4 py-10">
-            <div className="flex h-full w-full max-w-lg flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white text-slate-900 shadow-2xl max-h-[85vh]">
-              <div className="flex items-center justify-between gap-3 border-b border-slate-200 px-5 py-4">
+          <div className="fixed inset-0 z-[60] flex items-center justify-center px-5 py-12">
+            <div className="flex w-full max-w-xl flex-col gap-4 rounded-3xl border border-slate-200 bg-white/98 p-6 text-slate-900 shadow-[0_24px_80px_rgba(15,23,42,0.16)] backdrop-blur">
+              <div className="flex items-center justify-between">
                 <div className="relative h-10 w-10 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
                   <Image
                     src={`${basePath}/assets/logo.ico`}
@@ -117,22 +117,20 @@ export default function Header() {
                 </button>
               </div>
 
-              <div className="flex-1 overflow-y-auto px-5 py-4">
-                <div className="flex flex-col gap-2">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="block rounded-xl border border-slate-200 bg-white px-4 py-3 text-base font-semibold shadow-sm transition hover:-translate-y-0.5 hover:border-[#7f5af0] hover:text-[#7f5af0]"
-                      onClick={() => setOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              <nav className="flex flex-col gap-2 text-base font-semibold">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="rounded-2xl px-2 py-2 transition hover:text-[#7f5af0]"
+                    onClick={() => setOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
 
-              <div className="flex items-center gap-3 border-t border-slate-100 px-5 py-4">
+              <div className="flex items-center gap-3 pt-2">
                 {socials.map((social) => (
                   <a
                     key={social.label}

@@ -93,31 +93,20 @@ export default function Header() {
             onClick={() => setOpen(false)}
           />
           <div className="fixed inset-0 z-[60] flex items-center justify-center px-5 py-12">
-            <div className="flex w-full max-w-xl flex-col gap-4 rounded-3xl border border-slate-200 bg-white/98 p-6 text-slate-900 shadow-[0_24px_80px_rgba(15,23,42,0.16)] backdrop-blur">
-              <div className="flex items-center justify-between">
-                <div className="relative h-10 w-10 overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-                  <Image
-                    src={`${basePath}/assets/logo.ico`}
-                    alt="Logo"
-                    fill
-                    sizes="40px"
-                    className="object-contain p-1.5"
-                  />
-                </div>
-                <button
-                  type="button"
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-[#7f5af0] hover:text-[#7f5af0]"
-                  onClick={() => setOpen(false)}
-                  aria-label="Close menu"
-                >
-                  <span className="relative block h-4 w-4">
-                    <span className="absolute left-0 top-1/2 h-0.5 w-full -translate-y-1/2 rotate-45 rounded-full bg-current" />
-                    <span className="absolute left-0 top-1/2 h-0.5 w-full -translate-y-1/2 -rotate-45 rounded-full bg-current" />
-                  </span>
-                </button>
-              </div>
+            <div className="relative w-full max-w-xl rounded-3xl border border-slate-200 bg-white/98 p-6 text-slate-900 shadow-[0_24px_80px_rgba(15,23,42,0.16)] backdrop-blur">
+              <button
+                type="button"
+                className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-[#7f5af0] hover:text-[#7f5af0]"
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+              >
+                <span className="relative block h-4 w-4">
+                  <span className="absolute left-0 top-1/2 h-0.5 w-full -translate-y-1/2 rotate-45 rounded-full bg-current" />
+                  <span className="absolute left-0 top-1/2 h-0.5 w-full -translate-y-1/2 -rotate-45 rounded-full bg-current" />
+                </span>
+              </button>
 
-              <nav className="flex flex-col gap-2 text-base font-semibold">
+              <nav className="flex flex-col gap-3 pt-2 text-base font-semibold">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -130,7 +119,7 @@ export default function Header() {
                 ))}
               </nav>
 
-              <div className="flex items-center gap-3 pt-2">
+              <div className="mt-4 flex items-center gap-3">
                 {socials.map((social) => (
                   <a
                     key={social.label}

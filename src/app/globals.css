@@ -1,0 +1,284 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f7ff;
+  --foreground: #121528;
+  --accent: #ff5fb0;
+  --accent-2: #6a7cff;
+  --muted: #55607a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+::selection {
+  background: #f5e7ff;
+  color: #1f2933;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+.grid-overlay {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: radial-gradient(circle at center, black, transparent 70%);
+  opacity: 0.25;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out both;
+}
+
+.animate-fade-up-delayed {
+  animation: fade-up 0.9s ease-out 0.15s both;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-slide-loop {
+  animation: slide-loop 6s ease-in-out infinite;
+}
+
+@keyframes slide-loop {
+  0% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(-3px);
+  }
+}
+
+.sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.sheen::after {
+  content: "";
+  position: absolute;
+  inset: -50% -60%;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.65),
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.sheen:hover::after,
+.sheen:focus-visible::after {
+  transform: translateX(120%);
+}
+
+.btn-glow {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 12px 30px rgba(255, 95, 176, 0.25), 0 6px 15px rgba(106, 124, 255, 0.2);
+}
+
+.btn-glow:hover,
+.btn-glow:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(255, 95, 176, 0.35), 0 10px 25px rgba(106, 124, 255, 0.25);
+}
+
+.nav-divider {
+  position: relative;
+  height: 2px;
+  overflow: hidden;
+  background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+}
+
+.nav-divider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, #8c7bff, #00d8ff);
+  animation: slide-accent 2.4s ease-in-out infinite;
+}
+
+@keyframes slide-accent {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(250%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(320%);
+    opacity: 0;
+  }
+}
+
+.tech-bg {
+  position: relative;
+  isolation: isolate;
+  background: var(--background);
+}
+
+.tech-bg::before {
+  content: none;
+}
+
+/* Contact aurora animation */
+.contact-aurora {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 95, 176, 0.08), transparent 32%),
+    radial-gradient(circle at 80% 30%, rgba(0, 216, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(138, 92, 255, 0.06), transparent 26%),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.9));
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 30px 60px rgba(88, 111, 137, 0.12);
+}
+
+.contact-aurora::before,
+.contact-aurora::after {
+  content: "";
+  position: absolute;
+  inset: -30% -10%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 95, 176, 0.25), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(0, 216, 255, 0.25), transparent 38%);
+  filter: blur(48px);
+  opacity: 0.8;
+  animation: aurora-shift 12s ease-in-out infinite alternate;
+}
+
+.contact-aurora::after {
+  inset: -40% -20%;
+  animation-duration: 16s;
+  animation-delay: 1.4s;
+}
+
+@keyframes aurora-shift {
+  0% {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 2%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(7%, 6%, 0) scale(1.08);
+  }
+}
+
+.contact-pill {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-size: 200% 200%;
+  transition: transform 180ms ease, box-shadow 220ms ease, background-position 600ms ease;
+}
+
+.contact-pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0));
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+.contact-pill:hover,
+.contact-pill:focus-visible {
+  transform: translateY(-2px);
+  background-position: 80% 20%;
+  box-shadow: 0 20px 45px rgba(106, 124, 255, 0.25), 0 10px 25px rgba(0, 216, 255, 0.2);
+}
+
+.contact-pill:hover::after,
+.contact-pill:focus-visible::after {
+  opacity: 1;
+}
+
+.contact-bubble {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 95, 176, 0.18), transparent 60%);
+  filter: blur(12px);
+  animation: float 12s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.contact-bubble:nth-child(1) {
+  top: -20px;
+  right: 18%;
+  animation-delay: 0.5s;
+}
+
+.contact-bubble:nth-child(2) {
+  bottom: -30px;
+  left: 14%;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 216, 255, 0.15), transparent 60%);
+  animation-duration: 10s;
+  animation-delay: 1.6s;
+}
+
+.contact-bubble:nth-child(3) {
+  top: 18%;
+  left: 36%;
+  width: 110px;
+  height: 110px;
+  background: radial-gradient(circle at 30% 30%, rgba(138, 92, 255, 0.16), transparent 58%);
+  animation-duration: 14s;
+  animation-delay: 0.8s;
+}

@@ -92,7 +92,7 @@ export const projects = [
     company: "LR Team",
     logo: projectLogos.ERP,
     summary:
-      "Built an enterprise ERP with Spring Boot and Vue.js, including RBAC, financial modules, a Project Management module with Kanban, and a Telegram alert bot for environment monitoring.",
+      "Built an enterprise ERP with Laravel and Vue.js, including RBAC, financial modules, a Project Management module with Kanban, and a Telegram alert bot for environment monitoring.",
     description:
       "ERP System is a full-stack multi-tenant platform that unifies financial operations, access control, and operational automation. I owned features from database modeling through Vue.js interfaces, including Advance Cash Request and Cash Refunds modules, Advance Fund Request modules, bank-slip verification, and a Project Management module with project CRUD, Kanban task boards, tasks, and attachments.",
     highlights: [
@@ -106,7 +106,7 @@ export const projects = [
       "Integrations API keys",
       "Track user activity",
     ],
-    tags: ["Spring Boot", "Vue.js", "PostgreSQL", "Telegram"],
+    tags: ["Laravel", "Vue.js", "PostgreSQL", "Telegram"],
     link: "https://erp.c4techhub.com",
     linkLabel: "Visit site",
   },

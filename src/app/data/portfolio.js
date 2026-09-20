@@ -79,7 +79,7 @@ export const projects = [
       "Enterprise system integrations through API contracts",
       "Consistent authorization checks across CRM modules",
     ],
-    tags: ["Spring Boot", "RBAC", "Java", "REST APIs"],
+    tags: ["Spring Boot", "RBAC", "REST APIs"],
   },
   {
     slug: "erp-system",
